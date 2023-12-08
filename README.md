@@ -22,6 +22,10 @@ Beyond simple formatting **fmac** will also help you validate MAC addresses. If 
 > The result would be a message suggesting the there is one character missing, Even though the original length was 12 +/- the previous seperators.
 
 ## Install
+Download from the releases tab and set file to be on $PATH. 
+
+## Motivation
+This is actually a rust rewrite of a script that I had done previously in python. There were a few reasons for the rewrite. I had already been considering rewriting the project and moving it to it's own repo. I wanted it to be easily accessible and easier to install and use. Python comes with a lot of overhead in order to make it work as easy as other command line tools. (Setting up venv's and such) Addionally, since I'm starting to learn Rust, I thought this project would make a great canidate for a starting project. Plus it's fast! 
 
 ## Help
 ```
