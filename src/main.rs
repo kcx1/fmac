@@ -35,7 +35,7 @@ fn capitalize(mac: &str, caps: bool) -> String {
     if caps {
         return mac.to_uppercase();
     }
-    mac.to_string()
+    mac.to_lowercase()
 }
 
 fn format_mac(mac: &str, caps: bool, separator: char) -> String {
