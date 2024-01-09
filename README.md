@@ -22,11 +22,17 @@ Beyond simple formatting **fmac** will also help you validate MAC addresses. If 
 > The result would be a message suggesting the there is one character missing, Even though the original length was 12 +/- the previous separators.
 
 ## Install
-Download from the releases tab. Move the application to a folder that is on your $PATH. If you chose to put in somewhere like ```/usr/local/bin```, make sure that you update the ownership and the permissions. Defaults are typically something like: ```chown root:wheel path/to/file && chmod 755 path/to/file```
+Download from the releases tab. Move the application to a folder that is on your $PATH. I like to put it either somewhere like ```/usr/local/bin```, or ```~/.local/bin/```
 
-If you're on Mac you'll also need to tell Mac to trust the software: [Apple Help Guide](https://support.apple.com/guide/mac-help/apple-cant-check-app-for-malicious-software-mchleab3a043/mac)
 
-The easiest way is to try running the command in the terminal. MacOS will prompt you to view it in the finder. In the finder, right click the application and choose open. At the next popup confirm that you'd like to open the program. Once you get through the permission popups - you should be able to run the command now. 
+> [!TIP]
+> If you're on MacOS you'll also need to tell Mac to trust the software.
+> 
+> This is easiest done beofre you move the file. Simply open the zip in your downloads folder and right click "Open" on the fmac application. This will ask you if you trust the software, click ok and then it will run in your default terminal.
+> 
+> It will exit quickly, and that's okay. It just displays the help and exits.
+> 
+> Once it's ran it will be trusted and can be moved to somewhere that's already on $PATH like ```/usr/local/bin```. From here you can run it in your terminal like any other command. Here's an article if you get stuck: [Apple Help Guide](https://support.apple.com/guide/mac-help/apple-cant-check-app-for-malicious-software-mchleab3a043/mac)
 
 ## Motivation
 This is actually a rust rewrite of a script that I had done previously in python. There were a few reasons for the rewrite. I had already been considering rewriting the project and moving it to it's own repo. I wanted it to be easily accessible and easier to install and use. Python comes with a lot of overhead in order to make it work as easy as other command line tools. (Setting up venv's and such) Additionally, since I'm starting to learn Rust, I thought this project would make a great candidate for a starting project. Plus it's fast! 
