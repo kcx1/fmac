@@ -25,8 +25,8 @@ struct Cli {
     caps: bool,
 
     /// Use a custom separator character between each octet
-    #[arg(short, long, default_value_t = ':')]
-    separator: char,
+    #[arg(short, long, default_value_t = String::from(":"))]
+    separator: String,
 }
 
 fn filter_non_hex_chars(mac: &str) -> String {
@@ -41,7 +41,7 @@ fn convert_case(mac: &str, caps: bool) -> String {
     mac.to_lowercase()
 }
 
-fn format_mac(mac: &str, caps: bool, separator: char) -> String {
+fn format_mac(mac: &str, caps: bool, separator: &str) -> String {
     let mac = convert_case(mac, caps);
     let re = Regex::new(r"[[:xdigit:]]{2}").unwrap();
 
@@ -50,7 +50,7 @@ fn format_mac(mac: &str, caps: bool, separator: char) -> String {
     mac_array.join(&separator.to_string()).to_string()
 }
 
-fn process_mac(mac: &str, caps: bool, separator: char) -> Result<String, String> {
+fn process_mac(mac: &str, caps: bool, separator: &str) -> Result<String, String> {
     let mac = filter_non_hex_chars(&mac);
     let mac_length: u32 = mac
         .chars()
@@ -78,7 +78,7 @@ fn main() {
 
     if let Some(mac_addresses) = cli.mac {
         for mac in mac_addresses {
-            match process_mac(&mac, cli.caps, cli.separator) {
+            match process_mac(&mac, cli.caps, &cli.separator) {
                 Ok(formatted_mac) => {
                     println!("{}", formatted_mac);
                     if let Err(err) = cli_clipboard::set_contents(formatted_mac) {
