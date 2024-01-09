@@ -1,3 +1,4 @@
+[![Rust](https://github.com/kcx1/fmac/actions/workflows/rust.yml/badge.svg)](https://github.com/kcx1/fmac/actions/workflows/rust.yml)
 # FMAC
 ### Fast and simple CLI tool to format MAC Addresses
 
