@@ -2,7 +2,7 @@
 name = "fmac"
 version = "1.1.0"
 edition = "2021"
-authors = ["Casey Compton <ccompton42@gmail.com>"]
+authors = ["Casey C <kcx1codes@gmail.com>"]
 description = "A fast and simple CLI tool for formatting mac addresses"
 license = "MIT"
 
