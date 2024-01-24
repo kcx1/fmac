@@ -2,6 +2,8 @@
 # FMAC
 ### Fast and simple CLI tool to format MAC Addresses
 
+![alt text](https://github.com/kcx1/fmac/blob/main/fmac.gif)
+
 ## About
 
 This is a fast and simple command line tool that allows you to quickly format a MAC address or list of MAC addresses. As a convenience, the last entered MAC address will be copied into the clipboard to make pasting it even faster.
