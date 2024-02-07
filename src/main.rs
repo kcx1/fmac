@@ -4,7 +4,7 @@ use regex::Regex;
 use std::cmp::Ordering;
 
 use clap::Parser;
-use cli_clipboard;
+// use cli_clipboard;
 
 #[derive(Parser)]
 #[command(
@@ -47,11 +47,11 @@ fn format_mac(mac: &str, caps: bool, separator: &str) -> String {
 
     let mac_array: Vec<_> = re.find_iter(&mac).map(|m| m.as_str()).collect();
 
-    mac_array.join(&separator.to_string()).to_string()
+    mac_array.join(separator).to_string()
 }
 
 fn process_mac(mac: &str, caps: bool, separator: &str) -> Result<String, String> {
-    let mac = filter_non_hex_chars(&mac);
+    let mac = filter_non_hex_chars(mac);
     let mac_length: u32 = mac
         .chars()
         .count()
