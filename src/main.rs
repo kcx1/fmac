@@ -80,12 +80,12 @@ fn main() {
         for mac in mac_addresses {
             match process_mac(&mac, cli.caps, &cli.separator) {
                 Ok(formatted_mac) => {
-                    println!("{}", formatted_mac);
+                    println!("{formatted_mac}");
                     if let Err(err) = cli_clipboard::set_contents(formatted_mac) {
-                        eprintln!("Error setting clipboard contents: {}", err);
+                        eprintln!("Error setting clipboard contents: {err}");
                     }
                 }
-                Err(err) => eprintln!("Error: {}", err),
+                Err(err) => eprintln!("Error: {err}"),
             }
         }
     }
